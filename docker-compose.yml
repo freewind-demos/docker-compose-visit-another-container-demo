@@ -1,0 +1,10 @@
+version: '3'
+services:
+  httpbin:
+    image: kennethreitz/httpbin
+  local:
+    build: .
+    depends_on:
+      - httpbin
+    links:
+      - "httpbin:httpbin.host"
